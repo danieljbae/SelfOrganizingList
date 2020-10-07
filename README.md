@@ -5,7 +5,6 @@ Build code
 ```sh
 g++ -o main main.cpp SelfOrganizingList.cpp 
 ```
-g++ -o main main.cpp SelfOrganizingList.cpp 
 
 Run executable
 ```sh
