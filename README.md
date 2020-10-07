@@ -1,11 +1,16 @@
 ### Build Code
 
 Build code
-jovyan@jupyter-yourcuid:~$ g++ -o main main.cpp SelfOrganizingList.cpp 
+
+```sh
+g++ -o main main.cpp SelfOrganizingList.cpp 
+```
+g++ -o main main.cpp SelfOrganizingList.cpp 
 
 Run executable
-jovyan@jupyter-yourcuid:~$ ./main
-
+```sh
+./main
+```
 
 
 ### About the Project
