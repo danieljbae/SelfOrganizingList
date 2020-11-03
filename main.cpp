@@ -9,35 +9,37 @@ int main(){
     // Specific user creates table wrapper and allocates to heap
     SelfList ls;
     SelfList ls_Friend;
-    shared_ptr<meta_data_approach_table> root_table = ls.InitTable();
-    shared_ptr<meta_data_approach_table> root_table_friend = ls_Friend.InitTable();
+    string name = "Daniel";
+    string nameFriend = "Jeff";
+    shared_ptr<metaTable> root_table = ls.InitTable(name);
+    shared_ptr<metaTable> root_table_friend = ls_Friend.InitTable(nameFriend);
 
     
-// InitNode: Takes Root Table Wrapper and attaches concrete table with top nodes for every playlist type 
+    // InitNode: Takes Root Table Wrapper and attaches concrete table with top nodes for every playlist type 
     // InitNode Test: Pass with Null Table  
-    // shared_ptr<meta_data_approach_table> init_table = ls.InitNode(shared_ptr<meta_data_approach_table>(NULL));
+    // shared_ptr<metaTable> tableWrapper = ls.InitNode(shared_ptr<metaTable>(NULL));
     
     // InitNode Test: Pass with Non-Null Table  
-    shared_ptr<meta_data_approach_table> init_table = ls.InitNode(root_table);
-    shared_ptr<meta_data_approach_table> init_table_friend = ls_Friend.InitNode(root_table_friend);
+    shared_ptr<metaTable> tableWrapper = ls.InitNode(root_table);
+    shared_ptr<metaTable> init_table_friend = ls_Friend.InitNode(root_table_friend);
 
 
 
     cout << "" << endl;
     cout << "" << endl;
-    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%   " << init_table->table_name << "   %%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%   " << tableWrapper->table_name << "   %%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
     cout << "" << endl;
 
     // create pointer for updated tables 
-    shared_ptr<meta_data_approach_table> new_table; 
-    shared_ptr<meta_data_approach_table> new_table_friend; 
+    shared_ptr<metaTable> new_table; 
+    shared_ptr<metaTable> new_table_friend; 
 
 
 // **********************************************************
 // Test: Insert Tests
 // **********************************************************
     // Insert Test: with Null table >> insert to empty table
-    new_table = ls.add_node(shared_ptr<meta_data_approach_table>(NULL), "Elton John", "Rock", "Your Song");
+    new_table = ls.add_node(shared_ptr<metaTable>(NULL), "Elton John", "Rock", "Your Song");
      
     // Insert TEst: to not empty Empty Table
     new_table = ls.add_node(new_table, "The Beatles", "Rock", "Hey Jude");
@@ -64,7 +66,7 @@ int main(){
 // **********************************************************
     // Remove Test: with Null table >> insert to empty table
     // This will create initial tablewrapper and attach table for you >> return this table 
-    ls.remove_node(shared_ptr<meta_data_approach_table>(NULL), "Elton John", "Rock", "Your Song");
+    ls.remove_node(shared_ptr<metaTable>(NULL), "Elton John", "Rock", "Your Song");
 
     // Remove Node Test: First Node 
     ls.remove_node(new_table, "Elton John", "Rock", "Your Song");
@@ -140,7 +142,7 @@ int main(){
     // string search_artist = "The Beatle";
     // string search_genre = "Rock";
     // string search_song ="Hey Jud";
-    // shared_ptr<node> node = ls.search_artist(shared_ptr<meta_data_approach_table>(NULL), search_artist, search_genre, search_song);
+    // shared_ptr<node> node = ls.search_artist(shared_ptr<metaTable>(NULL), search_artist, search_genre, search_song);
     // if (node->next->artist == search_artist && node->next->song == search_song){
     //     cout << "Result found!";
     //     // cout << "  Search Results -- Artist: " << node->next->artist << " &  Song: "<< node->next->song << endl;
@@ -257,7 +259,7 @@ int main(){
     cout << "Popular Search Ouput - Beatles (9), Kanye (7), Jay Z (4)" << endl;
     cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
     cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
-    ls.View_All(new_table, POPULAR);
+    ls.View_All(new_table, FREQUENT);
 
 
 
