@@ -26,14 +26,14 @@ int main(){
     cout << " \n \n%%%%%%%%%%%%%%%%%%%%%%%%%%%%   " << tableWrapper->table_name << "   %%%%%%%%%%%%%%%%%%%%%%%%%%%% \n" << endl;
 
 
-    cout << "\n \n \n*****  Add and Remove Tests  *****" << endl;
-    cout << "Order should be: top_ptr >> Beatles >> Kanye >> Jay Z >> Coldplay >> The Weekend >> Null \n" << endl;
-    
-    
     
     // **********************************************************
     // Test: Insert Tests
     // **********************************************************
+    cout << "\n \n \n*****  Add and Remove Tests  *****" << endl;
+    cout << "Order should be: top_ptr >> Beatles >> Kanye >> Jay Z >> Coldplay >> The Weekend >> Null \n" << endl;
+    
+    
     new_table = ls.add_node(shared_ptr<metaTable>(NULL), "Elton John", "Rock", "Your Song"); // Insert Test: with Null table 
     new_table = ls.add_node(new_table, "The Beatles", "Rock", "Hey Jude"); // Insert Test: to not empty Empty Table
     new_table = ls.add_node(new_table, "The Beatles", "Rock", "Hey Jude"); // Insert Test : Song already exists
@@ -61,9 +61,11 @@ int main(){
     // Test: Search Tests
     // **********************************************************
     cout << "\n \n \n*****  Search Tests  *****" << endl;
+
+
     // **********************************************************
-    // Test: Search tests (History) -- Move to front
-    
+    // Test: Search tests (History) -- Move to front    
+    // **********************************************************
     cout << " \n \nBefore History Search" << endl;
     ls.View_All(new_table, HISTORY);
 
@@ -93,7 +95,8 @@ int main(){
 
     // **********************************************************
     // Test: Search tests (Popular) --  Organize by Count
-
+    // **********************************************************
+    
     // Test: First Value
     search_artist = "The Beatles";
     search_genre = "Rock";
