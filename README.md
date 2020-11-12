@@ -10,7 +10,8 @@ Run executable
 ```sh
 ./main
 ```
-
+### Test Cases 
+Shown in .\main.cpp
 
 ### About the Project
 
