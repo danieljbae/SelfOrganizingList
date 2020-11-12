@@ -11,7 +11,7 @@ Run executable
 ./main
 ```
 ### Test Cases 
-Shown in .\main.cpp
+Shown in ./main.cpp
 
 ### About the Project
 
